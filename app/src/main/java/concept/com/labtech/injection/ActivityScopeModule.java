@@ -1,12 +1,12 @@
 package concept.com.labtech.injection;
 
-import concept.com.labtech.activities.TabActivity;
+import concept.com.labtech.ui.MainActivity;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
 import android.app.Activity;
 import android.content.Context;
-import concept.com.labtech.activities.ABaseActivity;
+import concept.com.labtech.ui.ABaseActivity;
 import concept.com.labtech.fragments.MainFragment;
 
 /**
@@ -19,7 +19,7 @@ import concept.com.labtech.fragments.MainFragment;
             library = true,
             addsTo = ApplicationScopeModule.class,
             injects = {
-                    TabActivity.class,
+                    MainActivity.class,
                     MainFragment.class })
 
 public class ActivityScopeModule {

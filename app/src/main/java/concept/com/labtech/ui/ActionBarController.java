@@ -1,11 +1,8 @@
 package concept.com.labtech.ui;
 
-import android.content.Context;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -17,34 +14,34 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import concept.com.labtech.R;
-import concept.com.labtech.activities.TabActivity;
 
 /**
  * Created by alex on 1/8/15.
  */
 public class ActionBarController implements AdapterView.OnItemClickListener
 {
+    //TODO
     private static final String[] drawerStrings = {
             "Demographics", "Established Diagnoses", "Sino-pulmonary symptoms", "Situs Abnormalities", "Fertility Problems"};
 
-    private TabActivity context;
+    private MainActivity context;
     private View actionBar;
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle actionBarToggle;
 
-    public ActionBarController(TabActivity context)
+    public ActionBarController(MainActivity context)
     {
         this(context, drawerStrings);
 //        TODO
 //        this(context, null);
     }
 
-    public ActionBarController(TabActivity context, String[] drawerList)
+    public ActionBarController(MainActivity context, String[] drawerList)
     {
         this.context = context;
         toolbar = (Toolbar) context.findViewById(R.id.toolbar);
-        actionBar = LayoutInflater.from(context).inflate(R.layout.action_bar, toolbar, false);
+        actionBar = LayoutInflater.from(context).inflate(R.layout.actionbar, toolbar, false);
         drawer = (DrawerLayout) context.findViewById(R.id.drawer_layout);
         actionBarToggle = new ActionBarDrawerToggle(context, drawer, toolbar, R.string.empty, R.string.empty);
 
@@ -58,7 +55,7 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         }
     }
 
-    private void prepareToDisplay(TabActivity context)
+    private void prepareToDisplay(MainActivity context)
     {
         context.setSupportActionBar(toolbar);
         toolbar.addView(actionBar);
@@ -118,5 +115,10 @@ public class ActionBarController implements AdapterView.OnItemClickListener
     {
         drawer.closeDrawers();
 //        ((DrawerClickListener) context).drawerListClick(position);
+    }
+
+    public interface DrawerClickListener
+    {
+        public void drawerListClick(int position);
     }
 }

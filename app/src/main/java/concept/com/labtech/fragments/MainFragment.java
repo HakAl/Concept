@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -43,7 +42,7 @@ public class MainFragment extends ABaseFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_tab, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         TextView tv = (TextView) rootView.findViewById(R.id.section_label);
         tv.setText("1, 2, 3: " + getInt());
         return rootView;

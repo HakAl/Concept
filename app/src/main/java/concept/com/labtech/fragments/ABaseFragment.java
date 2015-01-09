@@ -2,7 +2,7 @@ package concept.com.labtech.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import concept.com.labtech.activities.ABaseActivity;
+import concept.com.labtech.ui.ABaseActivity;
 
 /** Base fragment which performs injection using the activity-scoped object graph **/
 public abstract class ABaseFragment extends Fragment {
