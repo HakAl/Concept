@@ -49,6 +49,8 @@ public class ActionBarController implements AdapterView.OnItemClickListener
 
         if (drawerList == null) {
 
+//            TODO
+
         } else {
             prepareToDisplay(context);
             setDrawerView();
