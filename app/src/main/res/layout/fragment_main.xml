@@ -1,11 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity$MainFragment"
-    android:id="@+id/fragment_main">
+    tools:context=".MainActivity$MainFragment">
+
 
     <TextView
         android:id="@+id/section_label"
@@ -50,8 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/input_search"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:text="New Patient:"
             android:fontFamily="sans-serif-light"
             android:textStyle="italic"
@@ -70,13 +69,12 @@
             android:singleLine="true"
             android:textColor="@color/white"
             android:inputType="number"
-
             android:layout_marginRight="16dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/fab"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="20dp" />
 
         <com.melnykov.fab.FloatingActionButton
             android:id="@+id/fab"
@@ -89,22 +87,6 @@
             fab:fab_colorNormal="@color/accent"
             fab:fab_colorPressed="@color/accent_lite" />
     </RelativeLayout>
-
-    <!--<ImageView-->
-    <!--android:id="@+id/fab"-->
-    <!--android:layout_width="64dp"-->
-    <!--android:layout_height="64dp"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_marginRight="32dp"-->
-    <!--android:layout_marginBottom="16dp"-->
-    <!--android:padding="8dp"-->
-    <!--android:background="@drawable/fab_selector"/>-->
-
-    <!--android:fontFamily="sans-serif"           // roboto regular-->
-    <!--android:fontFamily="sans-serif-light"     // roboto light-->
-    <!--android:fontFamily="sans-serif-condensed" // roboto condensed-->
-    <!--android:fontFamily="sans-serif-thin"      // roboto thin (android 4.2)-->
-    <!--android:fontFamily="sans-serif-medium"-->
-
 </RelativeLayout>
+
+    <!--android:fontFamily="sans-serif"           // roboto regular--><!--android:fontFamily="sans-serif-light"     // roboto light--><!--android:fontFamily="sans-serif-condensed" // roboto condensed--><!--android:fontFamily="sans-serif-thin"      // roboto thin (android 4.2)--><!--android:fontFamily="sans-serif-medium"-->

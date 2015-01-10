@@ -42,6 +42,9 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         prepareToDisplay(context);
     }
 
+    //todo
+    private String[] titles;
+
     private void prepareToDisplay(ActionBarActivity context)
     {
         context.setSupportActionBar(toolbar);
@@ -53,7 +56,7 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         this.actionBarToggle = new ActionBarDrawerToggle(context, drawer, toolbar, R.string.empty, R.string.empty);
         actionBarToggle.syncState();
         final ListView mDrawerList = (ListView) context.findViewById(R.id.list_drawer);
-        String[] titles = context.getResources().getStringArray(R.array.drawer_list);
+        titles = context.getResources().getStringArray(R.array.drawer_list);
         mDrawerList.setAdapter(new ArrayAdapter<>(context, R.layout.drawer_item, titles));
         mDrawerList.setOnItemClickListener(this);
 //        header.post(new Runnable() {
@@ -110,7 +113,7 @@ public class ActionBarController implements AdapterView.OnItemClickListener
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
         drawer.closeDrawers();
-        ((DrawerClickListener) context).drawerListClick(position);
+        ((DrawerClickListener) context).drawerListClick(titles[position]);
     }
 
 }

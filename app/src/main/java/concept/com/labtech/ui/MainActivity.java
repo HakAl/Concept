@@ -36,7 +36,6 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
         super.inject(this);
 
         setContentView(R.layout.activity_main);
-        this.actionBarController = new ActionBarController(this);
 
         if (savedInstanceState == null) {
             FragmentHelper.addFragment(
@@ -71,13 +70,15 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
     @Override
     protected void onStart() {
         super.onStart();
-        final ImageView header = (ImageView) this.findViewById(R.id.img_drawer);
+//        final ImageView header = (ImageView) this.findViewById(R.id.img_drawer);
+//
+//
+//        picasso
+//                .load("http://www.mvm.pitt.edu/sites/default/files/imagecache/sidebar/block-images/research_facilities_block2.jpg")
+//                .placeholder(R.drawable.primary_button)
+//                .into(header);
 
-
-        picasso
-                .load("http://www.mvm.pitt.edu/sites/default/files/imagecache/sidebar/block-images/research_facilities_block2.jpg")
-                .placeholder(R.drawable.primary_button)
-                .into(header);
+        this.actionBarController = new ActionBarController(this);
     }
 
     @Override
@@ -90,8 +91,8 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
 
 
     @Override
-    public void drawerListClick(int position) {
-        Toast.makeText(this, "Unimplemented Functionality", Toast.LENGTH_LONG).show();
+    public void drawerListClick(String position) {
+        Toast.makeText(this, position, Toast.LENGTH_LONG).show();
     }
 
     @Override

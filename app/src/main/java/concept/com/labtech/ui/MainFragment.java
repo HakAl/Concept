@@ -62,19 +62,7 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener,
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE)
                 {
-                    final String temp = input.getText().toString();
-                    if (temp != null) {
-                        if (temp.length() > 0) {
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    ((MainActivity) getActivity()).newEntry(temp);
-                                }
-                            }, 333);
-                        }
-                    } else {
-                        input.setError("Cannot be empty.");
-                    }
+                    editorAction();
                 }
                 return false;
             }
@@ -82,6 +70,25 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener,
 
 
         return root;
+    }
+
+    void editorAction()
+    {
+        final String temp = input.getText().toString();
+        if (temp != null) {
+            if (temp.length() > 0) {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ((MainActivity) getActivity()).newEntry(temp);
+                    }
+                }, 333);
+            } else {
+                input.requestFocus();
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+            }
+        }
     }
 
     @Override
@@ -96,19 +103,8 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener,
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab:
-                final String temp = input.getText().toString();
-                if (temp != null) {
-                    if (temp.length() > 0) {
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                ((MainActivity) getActivity()).newEntry(temp);
-                            }
-                        }, 333);
-                    }
-                } else {
-                    input.setError("Cannot be empty.");
-                }
+                editorAction();
+
                 break;
             default:
                 break;
