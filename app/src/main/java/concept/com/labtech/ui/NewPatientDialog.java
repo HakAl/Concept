@@ -26,6 +26,7 @@ public class NewPatientDialog extends DialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), DialogFragment.STYLE_NO_FRAME);
         View view = inflater.inflate(R.layout.patient_entry_dialog, new LinearLayout(getActivity()), false);
+
         return builder.setView(view).create();
     }
 }

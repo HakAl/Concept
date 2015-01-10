@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
+import android.widget.TextView;
+
+import concept.com.labtech.R;
 
 import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
@@ -47,9 +50,11 @@ public class DialogHelper implements DialogInterface.OnClickListener
         builder.create().show();
     }
 
-    public void show(DialogCallback context, View view, String positiveBtn, String negativeBtn)
+    public void show(DialogCallback context, View view, String id, String positiveBtn, String negativeBtn)
     {
         this.listener = context;
+        TextView tv =(TextView) view.findViewById(R.id.tv_dialog);
+        tv.setText(String.format(((Context) context).getString(R.string.dialog_text), id));
         AlertDialog.Builder builder = new AlertDialog.Builder((Context) context);
         builder.setView(view)
                 .setNegativeButton(negativeBtn, this)

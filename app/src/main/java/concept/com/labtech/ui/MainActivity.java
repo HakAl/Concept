@@ -138,13 +138,16 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
         }
     }
 
-    public void newEntry() {
+    private String id = "";
+
+    public void newEntry(String id) {
+        this.id = id;
         View v = LayoutInflater.from(this).inflate(
                 R.layout.patient_entry_dialog,
                 (ViewGroup) findViewById(R.id.container), false);
 //        v.findViewById(R.id.btn_number_dialog_negative).setOnClickListener(this);
 //        v.findViewById(R.id.btn_number_dialog_positive).setOnClickListener(this);
-        DialogHelper.modal().show(this, v, "OK", "CANCEL");
+        DialogHelper.modal().show(this, v, id, "OK", "CANCEL");
 //        NewPatientDialog.newInstance().show(getFragmentManager(), "Patient");
     }
 
@@ -158,7 +161,7 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
 //                FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.MAIN_FRAGMENT);
                 FragmentHelper.replaceFragment(
                         getFragmentManager(),
-                        PatientEntryFragment.newInstance(),
+                        PatientEntryFragment.newInstance(id),
                         R.id.container,
                         FragmentHelper.PATIENT_FRAGMENT);
                 break;
