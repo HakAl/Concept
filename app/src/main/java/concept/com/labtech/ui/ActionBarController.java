@@ -12,8 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import javax.inject.Inject;
 
 import concept.com.labtech.R;
 import concept.com.labtech.ui.callbacks.DrawerClickListener;
@@ -23,6 +28,9 @@ import concept.com.labtech.ui.callbacks.DrawerClickListener;
  */
 public class ActionBarController implements AdapterView.OnItemClickListener
 {
+    @Inject
+    Picasso picasso;
+
     private MainActivity context;
     private View actionBar;
     private Toolbar toolbar;
@@ -31,6 +39,7 @@ public class ActionBarController implements AdapterView.OnItemClickListener
 
     public ActionBarController(MainActivity context)
     {
+        context.inject(this);
         this.context = context;
         this.toolbar = (Toolbar) context.findViewById(R.id.toolbar);
         prepareToDisplay(context);
@@ -50,6 +59,11 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         String[] titles = context.getResources().getStringArray(R.array.drawer_list);
         mDrawerList.setAdapter(new ArrayAdapter<>(context, R.layout.drawer_item, titles));
         mDrawerList.setOnItemClickListener(this);
+//        header.post(new Runnable() {
+//            @Override
+//            public void run() {
+//            }
+//        });
     }
 
     private String getDrawerTitle()

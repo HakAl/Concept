@@ -1,5 +1,6 @@
 package concept.com.labtech.injection;
 
+import concept.com.labtech.ui.ActionBarController;
 import concept.com.labtech.ui.MainActivity;
 import concept.com.labtech.ui.PatientEntryFragment;
 import dagger.Module;
@@ -22,7 +23,9 @@ import concept.com.labtech.ui.MainFragment;
             injects = {
                     MainActivity.class,
                     MainFragment.class,
-                    PatientEntryFragment.class})
+                    PatientEntryFragment.class,
+                    ActionBarController.class
+            })
 
 public class ActivityScopeModule {
 

@@ -6,7 +6,12 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import javax.inject.Inject;
 
 import concept.com.labtech.R;
 import concept.com.labtech.ui.callbacks.DrawerClickListener;
@@ -17,6 +22,9 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 import static concept.com.labtech.util.FragmentHelper.MAIN_FRAGMENT;
 
 public class MainActivity extends ABaseActivity implements DrawerClickListener, View.OnTouchListener, DialogHelper.DialogCallback {
+
+    @Inject
+    Picasso picasso;
 
     //TODO remove
     private boolean isNewPatient = false;
@@ -60,6 +68,17 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
 
         actionBarController.onStop();
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        final ImageView header = (ImageView) this.findViewById(R.id.img_drawer);
+
+
+        picasso
+                .load("http://www.mvm.pitt.edu/sites/default/files/imagecache/sidebar/block-images/research_facilities_block2.jpg")
+                .placeholder(R.drawable.primary_button)
+                .into(header);
+    }
 
     @Override
     protected void onDestroy() {
@@ -67,6 +86,8 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
 
         actionBarController = null;
     }
+
+
 
     @Override
     public void drawerListClick(int position) {
