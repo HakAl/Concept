@@ -4,7 +4,7 @@
     android:id="@android:id/text1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textColor="#222"
+    android:drawableLeft="@drawable/circle"
     android:textSize="18sp"
     android:gravity="center_vertical"
     android:paddingTop="4dp"

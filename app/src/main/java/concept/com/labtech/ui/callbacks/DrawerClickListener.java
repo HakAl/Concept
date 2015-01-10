@@ -1,4 +1,4 @@
-package concept.com.labtech.ui.interfaces;
+package concept.com.labtech.ui.callbacks;
 
 public interface DrawerClickListener
 {

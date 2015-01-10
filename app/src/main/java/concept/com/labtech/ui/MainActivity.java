@@ -4,7 +4,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 
 import concept.com.labtech.R;
-import concept.com.labtech.ui.interfaces.DrawerClickListener;
+import concept.com.labtech.ui.callbacks.DrawerClickListener;
 
 public class MainActivity extends ABaseActivity implements DrawerClickListener {
 

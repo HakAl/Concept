@@ -16,9 +16,12 @@
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:id="@+id/img_poc"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="24dp"
+        android:background="@drawable/fab"/>
 
 </RelativeLayout>

@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import concept.com.labtech.R;
-import concept.com.labtech.ui.interfaces.DrawerClickListener;
+import concept.com.labtech.ui.callbacks.DrawerClickListener;
 
 /**
  * Created by alex on 1/8/15.
