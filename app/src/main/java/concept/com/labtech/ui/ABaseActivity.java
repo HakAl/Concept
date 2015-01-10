@@ -7,7 +7,6 @@ import concept.com.labtech.injection.DaggerApplication;
 import concept.com.labtech.injection.DaggerInjector;
 import dagger.ObjectGraph;
 
-
 /** Create the activity graph by .plus-ing our modules onto the application graph.
  ** Inject ourselves so subclasses will have dependencies fulfilled when this method returns. **/
 public abstract class ABaseActivity extends ActionBarActivity implements DaggerInjector {

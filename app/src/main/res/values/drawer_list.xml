@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="drawer_list">
+        <item>Demographics</item>
+        <item>Sino-pulmonary symptoms</item>
+        <item>Situs Abnormalities</item>
+        <item>Fertility Problems</item>
+    </string-array>
+
+</resources>

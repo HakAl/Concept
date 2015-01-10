@@ -6,6 +6,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,10 +21,6 @@ import concept.com.labtech.R;
  */
 public class ActionBarController implements AdapterView.OnItemClickListener
 {
-    //TODO
-    private static final String[] drawerStrings = {
-            "Demographics", "Established Diagnoses", "Sino-pulmonary symptoms", "Situs Abnormalities", "Fertility Problems"};
-
     private MainActivity context;
     private View actionBar;
     private Toolbar toolbar;
@@ -32,27 +29,12 @@ public class ActionBarController implements AdapterView.OnItemClickListener
 
     public ActionBarController(MainActivity context)
     {
-        this(context, drawerStrings);
-//        TODO
-//        this(context, null);
-    }
-
-    public ActionBarController(MainActivity context, String[] drawerList)
-    {
         this.context = context;
         toolbar = (Toolbar) context.findViewById(R.id.toolbar);
         actionBar = LayoutInflater.from(context).inflate(R.layout.actionbar, toolbar, false);
         drawer = (DrawerLayout) context.findViewById(R.id.drawer_layout);
         actionBarToggle = new ActionBarDrawerToggle(context, drawer, toolbar, R.string.empty, R.string.empty);
-
-        if (drawerList == null) {
-
-//            TODO
-
-        } else {
-            prepareToDisplay(context);
-            setDrawerView();
-        }
+        prepareToDisplay(context);
     }
 
     private void prepareToDisplay(MainActivity context)
@@ -60,16 +42,14 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         context.setSupportActionBar(toolbar);
         toolbar.addView(actionBar);
         actionBarToggle.syncState();
-        setDrawerView();
-
-//        ViewCompat.setElevation(toolbar, 5f);
-//        drawer.setScrimColor(Color.parseColor("#66000000"));
+        initDrawerView();
     }
 
-    private void setDrawerView()
+    private void initDrawerView()
     {
         final ListView mDrawerList = (ListView) context.findViewById(R.id.list_drawer);
-        mDrawerList.setAdapter(new ArrayAdapter<>(context, R.layout.drawer_item, drawerStrings));
+        String[] titles = context.getResources().getStringArray(R.array.drawer_list);
+        mDrawerList.setAdapter(new ArrayAdapter<>(context, R.layout.drawer_item, titles));
         mDrawerList.setOnItemClickListener(this);
     }
 
@@ -84,6 +64,11 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         this.drawer.closeDrawers();
     }
 
+    public void openDrawer()
+    {
+        this.drawer.openDrawer(Gravity.LEFT);
+    }
+
     public void onPostCreate()
     {
         actionBarToggle.syncState();
@@ -92,6 +77,7 @@ public class ActionBarController implements AdapterView.OnItemClickListener
     public void onStop()
     {
         drawer.closeDrawers();
+        context = null;
     }
 
     // experimental
@@ -114,7 +100,7 @@ public class ActionBarController implements AdapterView.OnItemClickListener
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
         drawer.closeDrawers();
-//        ((DrawerClickListener) context).drawerListClick(position);
+        context.drawerListClick(position);
     }
 
     public interface DrawerClickListener

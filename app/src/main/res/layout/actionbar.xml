@@ -15,7 +15,7 @@
         android:layout_alignParentLeft="true"
         android:fontFamily="sans-serif"
         android:gravity="center_vertical"
-        android:textSize="@dimen/actionbar_text"/>
+        android:textSize="18sp"/>
 
     <!--android:fontFamily="sans-serif"           // roboto regular-->
     <!--android:fontFamily="sans-serif-light"     // roboto light-->

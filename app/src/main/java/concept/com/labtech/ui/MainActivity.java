@@ -10,11 +10,6 @@ public class MainActivity extends ABaseActivity implements ActionBarController.D
 
     private ActionBarController actionBarController;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    ViewPager mViewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
