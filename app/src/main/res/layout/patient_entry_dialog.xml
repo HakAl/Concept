@@ -10,29 +10,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Patient"
+        android:text="Add Patient?"
         android:textSize="28sp"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="8dp"
         android:textColor="@color/primary_text"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="36dp"/>
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/divider"
-        android:layout_marginBottom="16dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Unique Identifier"
-        android:padding="8dp"
-        android:textSize="24sp"
-
-        android:textColorHint="@color/secondary_text"
-        android:layout_marginBottom="24dp"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:background="@color/divider"-->
+        <!--android:layout_marginBottom="16dp"/>-->
 
     <!--<LinearLayout-->
         <!--android:id="@+id/number_dialog_btn_bar"-->

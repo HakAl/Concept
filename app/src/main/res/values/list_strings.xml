@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_titles">
+        <item>Antimicrobial Therapeutics and Drug Discovery</item>
+        <item>Cancer Virology</item>
+        <item>Microbial Pathogenesis</item>
+        <item>Molecular and Cellular Biology of Microbes</item>
+    </string-array>
+
+    <string-array name="list_descripts">
+        <item>The discovery and clinical implementation of antimicrobial agents has transformed the practice of modern medicine.</item>
+        <item>Several viruses induce uncontrolled cell growth leading to the development of cancer.</item>
+        <item>The ability of viruses, bacteria, and eukaryotic microbes to cause disease is a function of specific interactions between pathogenic microbes and their host organisms.</item>
+        <item>The molecular processes that take place within a cell infected by a virus or within pathogenic bacteria and unicellular eukaryotes determine how microbes propagate, and spread within an infected host.</item>
+    </string-array>
+</resources>

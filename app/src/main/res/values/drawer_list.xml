@@ -2,7 +2,7 @@
 <resources>
 
     <string-array name="drawer_list">
-        <item>Profile</item>
+        <item>Recent</item>
         <item>Find Patient...</item>
         <item>Common Diagnoses</item>
         <item>Patient Demographics</item>

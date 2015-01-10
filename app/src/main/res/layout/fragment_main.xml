@@ -1,5 +1,5 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,18 +22,69 @@
         android:fontFamily="sans-serif-light"
         android:textStyle="italic"
         android:textSize="46sp"
-        android:textColor="@color/secondary_text"/>
+        android:textColor="@color/secondary_text" />
 
-    <ImageView
+    <ListView
+        android:id="@+id/list_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/section_label"
+        android:layout_above="@+id/search_label"
+        android:dividerHeight="12dp"
+        android:divider="@null"/>
+
+    <TextView
+        android:id="@+id/search_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/input_search"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Search Patients or Add:"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="italic"
+        android:textSize="36sp"
+        android:textColor="@color/secondary_text" />
+
+
+    <EditText
+        android:id="@+id/input_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unique Identifier"
+        android:padding="8dp"
+        android:textSize="24sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:focusable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/fab"
+        android:textColorHint="@color/secondary_text"
+        android:layout_marginBottom="16dp" />
+
+    <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="16dp"
-        android:padding="8dp"
-        android:background="@drawable/fab_selector"/>
+        android:layout_margin="16dp"
+        android:src="@drawable/fab_btn"
+        fab:fab_colorNormal="@color/accent"
+        fab:fab_colorPressed="@color/accent_lite" />
+
+    <!--<ImageView-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="64dp"-->
+    <!--android:layout_height="64dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginRight="32dp"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:padding="8dp"-->
+    <!--android:background="@drawable/fab_selector"/>-->
 
     <!--android:fontFamily="sans-serif"           // roboto regular-->
     <!--android:fontFamily="sans-serif-light"     // roboto light-->

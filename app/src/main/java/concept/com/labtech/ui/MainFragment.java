@@ -2,10 +2,14 @@ package concept.com.labtech.ui;
 
 import javax.inject.Inject;
 import concept.com.labtech.R;
+import concept.com.labtech.ui.adapters.MainListAdapter;
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,20 +17,11 @@ import com.squareup.picasso.Picasso;
 
 public class MainFragment extends ABaseFragment implements View.OnClickListener
 {
-    @Inject Picasso picasso;
-
-    private static final String ARG_SECTION_NUMBER = "section_number";
+    @Inject
+    Handler handler;
 
     public static MainFragment newInstance() {
         return new MainFragment();
-    }
-
-    public static MainFragment newInstance(int sectionNumber) {
-        MainFragment fragment = new MainFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -34,6 +29,10 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         root.findViewById(R.id.fab).setOnClickListener(this);
+
+        ListView list = (ListView) root.findViewById(R.id.list_main);
+        String[] listItems = getResources().getStringArray(R.array.list_titles);
+        list.setAdapter(new MainListAdapter(getActivity(), listItems));
 
         return root;
     }
@@ -44,7 +43,12 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab:
-                ((MainActivity) getActivity()).newEntry();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ((MainActivity) getActivity()).newEntry();
+                    }
+                }, 666);
                 break;
             default:
                 break;

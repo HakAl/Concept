@@ -4,6 +4,8 @@ import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.location.LocationManager;
 
@@ -42,5 +44,11 @@ public class AndroidAppModule
     LayoutInflater provideLayoutInflater()
     {
         return LayoutInflater.from(sApplicationContext);
+    }
+
+
+    @Provides @Singleton Handler provideHandler()
+    {
+        return new Handler(Looper.getMainLooper());
     }
 }
