@@ -16,6 +16,10 @@ public class MainFragment extends ABaseFragment
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
+    public static MainFragment newInstance() {
+        return new MainFragment();
+    }
+
     public static MainFragment newInstance(int sectionNumber) {
         MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
@@ -42,10 +46,10 @@ public class MainFragment extends ABaseFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-        TextView tv = (TextView) rootView.findViewById(R.id.section_label);
-        tv.setText("1, 2, 3: " + getInt());
-        return rootView;
+//        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+//        TextView tv = (TextView) rootView.findViewById(R.id.section_label);
+//        tv.setText("1, 2, 3: " + getInt());
+        return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
 //    @Override

@@ -1,4 +1,4 @@
-<merge
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,17 +14,22 @@
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome."
-        android:textSize="29sp"
-        />
-
-    <ImageView
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:padding="24dp"
-        android:background="@drawable/fab"/>
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="48dp"
+        android:text="Welcome."
+        android:fontFamily="sans-serif-light"
+        android:shadowColor="@color/primary_text"
+        android:shadowRadius="2"
+        android:textStyle="italic"
+        android:textSize="36sp"
+        android:textColor="@color/secondary_text"/>
 
-</merge>
+    <!--android:fontFamily="sans-serif"           // roboto regular-->
+    <!--android:fontFamily="sans-serif-light"     // roboto light-->
+    <!--android:fontFamily="sans-serif-condensed" // roboto condensed-->
+    <!--android:fontFamily="sans-serif-thin"      // roboto thin (android 4.2)-->
+    <!--android:fontFamily="sans-serif-medium"-->
+
+</RelativeLayout>
