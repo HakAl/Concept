@@ -4,21 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<it.neokree.materialtabs.MaterialTabHost-->
-    <!--android:id="@+id/materialTabHost"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="48dp"-->
-    <!--app:textColor="@color/white"-->
-    <!--app:primaryColor="@color/primary"-->
-    <!--app:accentColor="@color/accent" />-->
-
-    <!--<android.support.v4.view.ViewPager-->
-    <!--android:layout_below="@+id/materialTabHost"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:id="@+id/viewpager"-->
-    <!--/>-->
-
     <LinearLayout
         android:layout_margin="16dp"
         android:layout_marginTop="16dp"
@@ -32,66 +17,66 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
-            android:text="General Information"
+            android:text="Demographics"
             android:fontFamily="sans-serif-light"
             android:textStyle="italic"
             android:textSize="40sp"
             android:textColor="@color/secondary_text" />
 
         <View
-            android:id="@+id/entry_divider"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/accent"
             android:layout_marginBottom="16dp" />
 
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/primary"
-            android:text="Unique ID" />
+            android:text="Date of Birth" />
 
         <EditText
-            android:id="@+id/input_unique_id"
+            android:id="@+id/input_dob"
+            android:imeOptions="actionDone"
             android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textSize="24sp"
+            android:hint="MM/DD/YYYY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Gender" />
+
+        <EditText
+            android:id="@+id/input_gender"
             android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionNext"
-            android:singleLine="true"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textSize="24sp"
-            android:hint="PT-1234" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:textColor="@color/primary"
-            android:text="Unique ID (Proband)" />
-
-        <EditText
-            android:id="@+id/input_unique_prob"
-            android:layout_marginBottom="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
             android:layout_margin="4dp"
             android:singleLine="true"
             android:textSize="24sp"
-
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:hint="PR-4321" />
+            android:hint="M or F" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/primary"
-            android:text="Date of Visit" />
+            android:text="Ethnicity" />
 
         <EditText
             android:id="@+id/input_date_visit"
@@ -104,14 +89,33 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textSize="24sp"
-            android:hint="MM/DD/YYYY" />
+            android:hint="Which" />
+
+        <TextView
+            android:id="@+id/diagnoses_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Established Diagnoses"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="italic"
+            android:textSize="40sp"
+            android:textColor="@color/secondary_text" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/accent"
+            android:layout_marginBottom="16dp" />
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/primary"
-            android:text="Person Taking Family History" />
+            android:text="Heterotaxy" />
 
         <EditText
             android:id="@+id/input_family_history"
@@ -124,14 +128,14 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textSize="24sp"
-            android:hint="Name" />
+            android:hint="Description" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/primary"
-            android:text="Email Address" />
+            android:text="Situs Inversus" />
 
         <EditText
             android:id="@+id/input_email"
@@ -144,17 +148,17 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textSize="24sp"
-            android:hint="researcher@upmc.com" />
+            android:hint="Description" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/primary"
-            android:text="Fax" />
+            android:text="Congenital Heart Defect" />
 
         <EditText
-            android:id="@+id/input_fax"
+            android:id="@+id/input_heart"
             android:singleLine="true"
             android:layout_margin="4dp"
             android:layout_marginBottom="8dp"
@@ -164,27 +168,27 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textSize="24sp"
-            android:hint="412-123-4567" />
+            android:hint="Description" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/primary"
-            android:text="Date of Consent" />
+            android:text="Other" />
 
         <EditText
-            android:id="@+id/input_consent_date"
-            android:imeOptions="actionDone"
-            android:layout_margin="4dp"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/input_other"
             android:singleLine="true"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textSize="24sp"
-            android:hint="MM/DD/YYYY" />
+            android:hint="Description" />
     </LinearLayout>
 
     <LinearLayout
@@ -195,7 +199,7 @@
         android:weightSum="2">
 
         <Button
-            android:id="@+id/first_back"
+            android:id="@+id/btn_entry_back"
             android:layout_margin="16dp"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -212,7 +216,7 @@
             android:background="@drawable/accent_button" />
 
         <Button
-            android:id="@+id/first_next"
+            android:id="@+id/btn_entry_next"
             android:layout_margin="16dp"
             android:layout_width="0dp"
             android:layout_weight="1"
