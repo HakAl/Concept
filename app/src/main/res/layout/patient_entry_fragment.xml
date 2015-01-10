@@ -45,60 +45,110 @@
         android:background="@color/accent"
         android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Unique ID"/>
     <EditText
         android:id="@+id/input_unique_id"
         android:layout_margin="4dp"
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
         android:singleLine="true"
-        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        android:hint="Unique ID" />
+        android:hint="PT-1234" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Unique ID (Proband)"/>
     <EditText
         android:id="@+id/input_unique_prob"
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
         android:layout_margin="4dp"
         android:singleLine="true"
-        android:padding="16dp"
         android:textSize="24sp"
-        android:hint="Unique ID (Proband)" />
 
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:hint="PR-4321" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Date of Visit"/>
     <EditText
         android:id="@+id/input_date_visit"
         android:singleLine="true"
         android:layout_margin="4dp"
+        android:imeOptions="actionNext"
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        android:hint="Date of Visit" />
+        android:hint="MM/DD/YYYY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Person Taking Family History"/>
 
     <EditText
         android:id="@+id/input_family_history"
         android:layout_margin="4dp"
+        android:imeOptions="actionNext"
         android:singleLine="true"
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        android:hint="Person Taking Family History" />
+        android:hint="Name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Email Address"/>
 
     <EditText
         android:id="@+id/input_email"
         android:layout_margin="4dp"
+        android:imeOptions="actionNext"
         android:singleLine="true"
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        android:hint="Email Address" />
+        android:hint="researcher@upmc.com" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Fax"/>
 
     <EditText
         android:id="@+id/input_fax"
@@ -107,35 +157,77 @@
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:imeOptions="actionNext"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        android:hint="Fax" />
+        android:hint="412-123-4567" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary"
+            android:text="Date of Consent"/>
 
     <EditText
         android:id="@+id/input_consent_date"
+        android:imeOptions="actionDone"
         android:layout_margin="4dp"
         android:layout_width="match_parent"
         android:layout_marginBottom="8dp"
         android:singleLine="true"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        android:hint="Date of Consent" />
+        android:hint="MM/DD/YYYY" />
     </LinearLayout>
 
-    <Button
-        android:layout_margin="16dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="Next"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="8dp"
-        android:padding="10dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        android:background="@drawable/primary_button"/>
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_entry_back"
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="56dp"
+            android:text="BACK"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="5dp"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:background="@drawable/accent_button"/>
+
+        <Button
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="56dp"
+            android:text="Next"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:padding="10dp"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:background="@drawable/primary_button"/>
+
+        </LinearLayout>
 
     <!--Top Level-->
     <!--Unique identifier of person being evaluated-->
