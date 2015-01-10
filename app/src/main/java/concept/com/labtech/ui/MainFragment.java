@@ -7,10 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-public class MainFragment extends ABaseFragment
+public class MainFragment extends ABaseFragment implements View.OnClickListener
 {
     @Inject Picasso picasso;
 
@@ -28,39 +29,26 @@ public class MainFragment extends ABaseFragment
         return fragment;
     }
 
-    private int one = 0xf00;
-    private int two = 0xfF0;
-    private int three = 0x00f;
-
-    int getInt()
-    {
-        double d = Math.random();
-        if (d < .34) {
-            return one;
-        }
-        if (d < .67) {
-            return two;
-        }
-        return three;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-//        TextView tv = (TextView) rootView.findViewById(R.id.section_label);
-//        tv.setText("1, 2, 3: " + getInt());
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View root = inflater.inflate(R.layout.fragment_main, container, false);
+
+        root.findViewById(R.id.fab).setOnClickListener(this);
+
+        return root;
     }
 
-//    @Override
-//    public void onViewCreated(View view, Bundle savedInstanceState)
-//    {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        String imageUrl = "http://cdn1.smosh.com/sites/default/files/legacy.images/smosh-pit/092010/philosoraptor-synonym.jpeg";
-//
-//        ImageView imageView = getView(R.id.img_poc);
-//        picasso.load(imageUrl).into(imageView);
-//    }
 
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab:
+                ((MainActivity) getActivity()).newEntry();
+                Toast.makeText(getActivity(), "CLICK", Toast.LENGTH_LONG).show();
+                break;
+            default:
+                break;
+        }
+    }
 }

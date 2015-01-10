@@ -3,6 +3,7 @@ package concept.com.labtech.ui;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
 import static concept.com.labtech.util.FragmentHelper.MAIN_FRAGMENT;
 
-public class MainActivity extends ABaseActivity implements DrawerClickListener, View.OnClickListener, DialogHelper.DialogCallback {
+public class MainActivity extends ABaseActivity implements DrawerClickListener, View.OnTouchListener, DialogHelper.DialogCallback {
 
     //TODO remove
     private boolean isNewPatient = false;
@@ -28,7 +29,6 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
 
         setContentView(R.layout.activity_main);
         this.actionBarController = new ActionBarController(this);
-        this.findViewById(R.id.fab).setOnClickListener(this);
 
         if (savedInstanceState == null) {
             FragmentHelper.addFragment(
@@ -71,17 +71,6 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
     @Override
     public void drawerListClick(int position) {
         Toast.makeText(this, "Unimplemented Functionality", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fab:
-                newEntry();
-                break;
-            default:
-                break;
-        }
     }
 
     @Override
@@ -128,7 +117,7 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
         }
     }
 
-    private void newEntry() {
+    public void newEntry() {
         View v = LayoutInflater.from(this).inflate(
                 R.layout.patient_entry_dialog,
                 (ViewGroup) findViewById(R.id.container), false);
@@ -157,5 +146,10 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
                 break;
             default: break;
         }
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
     }
 }
