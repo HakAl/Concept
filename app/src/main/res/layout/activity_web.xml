@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:id="@+id/toolbar" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/drawer_layout">
+
+        <concept.com.labtech.ui.LoadingRelativeLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/web_activity_container"
+            android:background="@color/off_white"/>
+
+        <RelativeLayout
+            android:layout_below="@+id/toolbar"
+            android:layout_height="match_parent"
+            android:layout_width="360dp"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:paddingTop="16dp"
+            android:id="@+id/parent_list_drawer">
+
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:layout_width="360dp"
+                android:layout_height="0dp"
+                android:id="@+id/img_drawer"/>
+
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:textSize="20sp"
+                android:text="Android Powered"
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/off_white"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="16dp"
+                android:background="?attr/colorPrimary"
+                android:id="@+id/tv_drawer_footer" />
+
+            <ListView
+                android:id="@+id/list_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/img_drawer"
+                android:layout_gravity="left"
+                android:choiceMode="singleChoice"
+                android:layout_marginTop="8dp"
+                android:divider="@null"
+                android:dividerHeight="6dp" />
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+</RelativeLayout>

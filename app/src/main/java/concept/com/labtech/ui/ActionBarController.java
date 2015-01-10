@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -28,24 +29,20 @@ import concept.com.labtech.ui.callbacks.DrawerClickListener;
  */
 public class ActionBarController implements AdapterView.OnItemClickListener
 {
-    @Inject
-    Picasso picasso;
-
-    private MainActivity context;
+    private ActionBarActivity context;
     private View actionBar;
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle actionBarToggle;
 
-    public ActionBarController(MainActivity context)
+    public ActionBarController(ActionBarActivity context)
     {
-        context.inject(this);
         this.context = context;
         this.toolbar = (Toolbar) context.findViewById(R.id.toolbar);
         prepareToDisplay(context);
     }
 
-    private void prepareToDisplay(MainActivity context)
+    private void prepareToDisplay(ActionBarActivity context)
     {
         context.setSupportActionBar(toolbar);
         this.actionBar = LayoutInflater.from(context).inflate(R.layout.actionbar, toolbar, false);
@@ -115,4 +112,5 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         drawer.closeDrawers();
         ((DrawerClickListener) context).drawerListClick(position);
     }
+
 }

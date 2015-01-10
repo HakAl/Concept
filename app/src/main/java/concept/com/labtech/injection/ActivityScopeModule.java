@@ -3,6 +3,7 @@ package concept.com.labtech.injection;
 import concept.com.labtech.ui.ActionBarController;
 import concept.com.labtech.ui.MainActivity;
 import concept.com.labtech.ui.PatientEntryFragment;
+import concept.com.labtech.ui.WebViewActivity;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
@@ -24,6 +25,7 @@ import concept.com.labtech.ui.MainFragment;
                     MainActivity.class,
                     MainFragment.class,
                     PatientEntryFragment.class,
+                    WebViewActivity.class,
                     ActionBarController.class
             })
 
