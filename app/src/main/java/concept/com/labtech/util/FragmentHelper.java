@@ -14,7 +14,6 @@ public class FragmentHelper
         try {
             fm.beginTransaction()
                     .add(android.R.id.content, fragment, tag)
-                    .addToBackStack(null)
                     .commit();
         } catch (Exception e) { }
     }
@@ -24,7 +23,6 @@ public class FragmentHelper
         try {
             fm.beginTransaction()
                     .add(containerResId, fragment, tag)
-                    .addToBackStack(null)
                     .commit();
         } catch (Exception e) { }
     }
@@ -34,7 +32,6 @@ public class FragmentHelper
         try {
             fm.beginTransaction()
                     .replace(containerResId, fragment, tag)
-                    .addToBackStack(null)
                     .commit();
         } catch (Exception e) { }
     }

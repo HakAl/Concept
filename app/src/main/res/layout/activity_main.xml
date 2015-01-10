@@ -31,13 +31,14 @@
             android:layout_gravity="start"
             android:orientation="vertical"
             android:background="#fff"
+            android:paddingTop="16dp"
             android:id="@+id/parent_list_drawer">
 
             <TextView
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
-                android:textSize="18sp"
-                android:text="Android Power"
+                android:textSize="20sp"
+                android:text="Android Powered"
                 android:textStyle="italic"
                 android:layout_width="match_parent"
                 android:padding="16dp"
@@ -58,7 +59,7 @@
                 android:choiceMode="singleChoice"
                 android:layout_marginTop="8dp"
                 android:divider="@null"
-                android:dividerHeight="0dp" />
+                android:dividerHeight="6dp" />
         </RelativeLayout>
     </android.support.v4.widget.DrawerLayout>
 </RelativeLayout>

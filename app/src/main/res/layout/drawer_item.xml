@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:drawablePadding="24dp"
     android:drawableLeft="@drawable/circle"
+    android:layout_marginTop="12dp"
     android:textColor="@color/secondary_text"
     android:textSize="25sp"
     android:gravity="center_vertical"

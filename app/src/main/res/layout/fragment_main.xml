@@ -17,11 +17,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="48dp"
+        android:layout_marginLeft="16dp"
         android:text="Welcome."
         android:fontFamily="sans-serif-light"
         android:textStyle="italic"
-        android:textSize="42sp"
+        android:textSize="46sp"
         android:textColor="@color/secondary_text"/>
 
     <ImageView
@@ -31,9 +31,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:padding="8dp"
-        android:background="@drawable/fab_btn"/>
+        android:background="@drawable/fab_selector"/>
 
     <!--android:fontFamily="sans-serif"           // roboto regular-->
     <!--android:fontFamily="sans-serif-light"     // roboto light-->

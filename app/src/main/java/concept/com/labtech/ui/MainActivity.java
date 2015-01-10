@@ -81,13 +81,13 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
         } else {
             if (isNewPatient) {
                 isNewPatient = false;
-            FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.PATIENT_FRAGMENT);
-            FragmentHelper.replaceFragment(
-                    getFragmentManager(),
-                    PatientEntryFragment.newInstance(),
-                    R.id.container,
-                    FragmentHelper.MAIN_FRAGMENT);
-            isNewPatient = false;
+//                FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.PATIENT_FRAGMENT);
+                FragmentHelper.replaceFragment(
+                        getFragmentManager(),
+                        MainFragment.newInstance(),
+                        R.id.container,
+                        FragmentHelper.MAIN_FRAGMENT);
+                isNewPatient = false;
             } else {
                 super.onBackPressed();
             }
@@ -134,7 +134,7 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
                 isNewPatient = true;
                 this.setWindowTitle("New Patient");
                 toggleFabVisiblility();
-                FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.MAIN_FRAGMENT);
+//                FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.MAIN_FRAGMENT);
                 FragmentHelper.replaceFragment(
                         getFragmentManager(),
                         PatientEntryFragment.newInstance(),
@@ -144,7 +144,8 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
             case BUTTON_NEGATIVE:
 //                Toast.makeText(this, "negative", Toast.LENGTH_LONG).show();
                 break;
-            default: break;
+            default:
+                break;
         }
     }
 

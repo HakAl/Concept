@@ -42,8 +42,8 @@ public class ActionBarController implements AdapterView.OnItemClickListener
         this.actionBar = LayoutInflater.from(context).inflate(R.layout.actionbar, toolbar, false);
         toolbar.addView(actionBar);
         this.drawer = (DrawerLayout) context.findViewById(R.id.drawer_layout);
-        this.drawer.setScrimColor(Color.parseColor("#00000000"));
-//        this.drawer.setScrimColor(Color.parseColor("#aa111111"));
+//        this.drawer.setScrimColor(Color.parseColor("#00000000"));
+        this.drawer.setScrimColor(Color.parseColor("#aa111111"));
         this.actionBarToggle = new ActionBarDrawerToggle(context, drawer, toolbar, R.string.empty, R.string.empty);
         actionBarToggle.syncState();
         final ListView mDrawerList = (ListView) context.findViewById(R.id.list_drawer);

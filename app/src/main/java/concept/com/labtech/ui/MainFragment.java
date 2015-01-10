@@ -45,7 +45,6 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener
         switch (v.getId()) {
             case R.id.fab:
                 ((MainActivity) getActivity()).newEntry();
-                Toast.makeText(getActivity(), "CLICK", Toast.LENGTH_LONG).show();
                 break;
             default:
                 break;
