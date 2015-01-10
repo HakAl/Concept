@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import android.app.Application;
 
-/** bootstrap -- allows no-arg constructor in AndroidAppModule
- **/
+/** bootstrap -- allows no-arg constructor in AndroidAppModule **/
 public class DaggerApplication extends Application implements DaggerInjector {
 
     private ObjectGraph mObjectGraph;
