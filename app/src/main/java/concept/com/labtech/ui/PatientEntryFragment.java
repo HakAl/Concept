@@ -30,6 +30,9 @@ public class PatientEntryFragment extends ABaseFragment {
         TextView unInput = (TextView) root.findViewById(R.id.input_unique_id);
         unInput.setText(getArguments().getString("ID"));
 
+        root.findViewById(R.id.input_unique_prob).requestFocus();
+
+
         return root;
     }
 }

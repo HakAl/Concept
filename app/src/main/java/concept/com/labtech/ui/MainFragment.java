@@ -57,16 +57,28 @@ public class MainFragment extends ABaseFragment implements View.OnClickListener,
         list.setOnItemClickListener(this);
 
         input = (EditText) root.findViewById(R.id.input_search);
-//        input.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-//            @Override
-//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-//                if (actionId == EditorInfo.IME_ACTION_DONE)
-//                {
-//                    Toast.makeText(getActivity(), v.getText().toString(), Toast.LENGTH_LONG).show();
-//                }
-//                return false;
-//            }
-//        });
+        input.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE)
+                {
+                    final String temp = input.getText().toString();
+                    if (temp != null) {
+                        if (temp.length() > 0) {
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ((MainActivity) getActivity()).newEntry(temp);
+                                }
+                            }, 333);
+                        }
+                    } else {
+                        input.setError("Cannot be empty.");
+                    }
+                }
+                return false;
+            }
+        });
 
 
         return root;
