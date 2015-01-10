@@ -19,6 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="32dp"
         android:layout_marginTop="36dp"
+        android:padding="8dp"
         android:background="@drawable/fab_btn"/>
 
     <android.support.v4.widget.DrawerLayout
@@ -47,6 +48,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:textSize="18sp"
+                android:text="Android Power"
+                android:textStyle="italic"
                 android:layout_width="match_parent"
                 android:padding="16dp"
                 android:layout_height="wrap_content"

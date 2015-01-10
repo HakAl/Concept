@@ -39,8 +39,8 @@
 
     <EditText
         android:id="@+id/input_unique_id"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="8dp"
         android:layout_below="@id/entry_divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,11 +51,11 @@
 
     <EditText
         android:id="@+id/input_unique_prob"
+        android:layout_marginBottom="8dp"
         android:layout_below="@id/input_unique_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
         android:singleLine="true"
         android:padding="16dp"
         android:textSize="24sp"
@@ -64,10 +64,9 @@
     <EditText
         android:id="@+id/input_date_visit"
         android:singleLine="true"
-
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
         android:layout_below="@id/input_unique_prob"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -77,9 +76,9 @@
     <EditText
         android:id="@+id/input_family_history"
         android:layout_below="@id/input_date_visit"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
         android:singleLine="true"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -88,10 +87,10 @@
 
     <EditText
         android:id="@+id/input_email"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
         android:singleLine="true"
         android:layout_below="@id/input_family_history"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -101,8 +100,8 @@
     <EditText
         android:id="@+id/input_fax"
         android:singleLine="true"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="8dp"
         android:layout_below="@id/input_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,10 +111,10 @@
 
     <EditText
         android:id="@+id/input_consent_date"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="4dp"
         android:layout_below="@id/input_fax"
         android:layout_width="match_parent"
+        android:layout_marginBottom="8dp"
         android:singleLine="true"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -124,13 +123,12 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="Next"
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="8dp"
-        android:paddingBottom="6dp"
-        android:paddingTop="6dp"
+        android:padding="10dp"
         android:layout_alignParentBottom="true"
         android:textSize="24sp"
         android:textColor="@color/white"

@@ -3,6 +3,7 @@ package concept.com.labtech.ui;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.View;
 
 import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
@@ -14,6 +15,7 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 public class DialogHelper implements DialogInterface.OnClickListener
 {
     private DialogCallback listener;
+    private AlertDialog temp;
 
     private DialogHelper()
     {
@@ -30,7 +32,8 @@ public class DialogHelper implements DialogInterface.OnClickListener
         builder.setMessage(message)
                 .setCancelable(true)
                 .setPositiveButton(context.getString(android.R.string.ok), getListener());
-        builder.create().show();
+        temp = builder.create();
+        temp.show();
     }
 
     public void show(DialogCallback listener, String message, String positiveBtn, String negativeBtn)
@@ -41,6 +44,17 @@ public class DialogHelper implements DialogInterface.OnClickListener
                 .setCancelable(true)
                 .setNegativeButton(negativeBtn, this)
                 .setPositiveButton(positiveBtn, this);
+        builder.create().show();
+    }
+
+    public void show(DialogCallback context, View view, String positiveBtn, String negativeBtn)
+    {
+        this.listener = context;
+        AlertDialog.Builder builder = new AlertDialog.Builder((Context) context);
+        builder.setView(view)
+                .setNegativeButton(negativeBtn, this)
+                .setPositiveButton(positiveBtn, this)
+               .setCancelable(true);
         builder.create().show();
     }
 

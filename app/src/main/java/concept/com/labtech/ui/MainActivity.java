@@ -1,9 +1,10 @@
 package concept.com.labtech.ui;
 
-import android.app.AlertDialog;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import concept.com.labtech.R;
@@ -75,9 +76,66 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.fab: newEntry(); break;
-            default:break;
+            case R.id.fab:
+                newEntry();
+                break;
+            default:
+                break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (actionBarController.isDrawerOpen()) {
+            actionBarController.onStop();
+        } else {
+            if (isNewPatient) {
+                isNewPatient = false;
+            FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.PATIENT_FRAGMENT);
+            FragmentHelper.replaceFragment(
+                    getFragmentManager(),
+                    PatientEntryFragment.newInstance(),
+                    R.id.container,
+                    FragmentHelper.MAIN_FRAGMENT);
+            isNewPatient = false;
+            } else {
+                super.onBackPressed();
+            }
+        }
+//        if (isNewPatient) {
+//            FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.PATIENT_FRAGMENT);
+//            FragmentHelper.replaceFragment(
+//                    getFragmentManager(),
+//                    PatientEntryFragment.newInstance(),
+//                    R.id.container,
+//                    FragmentHelper.MAIN_FRAGMENT);
+//            isNewPatient = false;
+//        }
+//
+//        super.onBackPressed();
+    }
+
+    public void setWindowTitle(String title) {
+        actionBarController.setActionBarTitle(title);
+    }
+
+    public void toggleFabVisiblility() {
+        if (this.findViewById(R.id.fab).getVisibility() == View.VISIBLE) {
+            this.findViewById(R.id.fab).setVisibility(View.INVISIBLE);
+        } else {
+            this.findViewById(R.id.fab).setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void newEntry() {
+        View v = LayoutInflater.from(this).inflate(
+                R.layout.patient_entry_dialog,
+                (ViewGroup) findViewById(R.id.container), false);
+//        v.findViewById(R.id.btn_number_dialog_negative).setOnClickListener(this);
+//        v.findViewById(R.id.btn_number_dialog_positive).setOnClickListener(this);
+        DialogHelper.modal().show(this, v, "OK", "CANCEL");
+//        NewPatientDialog.newInstance().show(getFragmentManager(), "Patient");
     }
 
     @Override
@@ -95,46 +153,9 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener, 
                         FragmentHelper.PATIENT_FRAGMENT);
                 break;
             case BUTTON_NEGATIVE:
-                Toast.makeText(this, "negative", Toast.LENGTH_LONG).show();
+//                Toast.makeText(this, "negative", Toast.LENGTH_LONG).show();
                 break;
+            default: break;
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (isNewPatient) {
-            FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.PATIENT_FRAGMENT);
-            FragmentHelper.replaceFragment(
-                    getFragmentManager(),
-                    PatientEntryFragment.newInstance(),
-                    R.id.container,
-                    FragmentHelper.MAIN_FRAGMENT);
-            isNewPatient = false;
-        }
-
-        super.onBackPressed();
-    }
-
-    public void setWindowTitle(String title) {
-        actionBarController.setActionBarTitle(title);
-    }
-
-    public void toggleFabVisiblility()
-    {
-        if (this.findViewById(R.id.fab).getVisibility() == View.VISIBLE) {
-            this.findViewById(R.id.fab).setVisibility(View.INVISIBLE);
-        } else {
-            this.findViewById(R.id.fab).setVisibility(View.VISIBLE);
-        }
-    }
-
-    private void newEntry()
-    {
-//        DialogHelper.modal().show(this, "New Patient?", "OK", "CANCEL");
-        FragmentHelper.addFragment(
-                getFragmentManager(),
-                NewPatientDialog.newInstance(),
-                R.id.container,
-                FragmentHelper.DIALOG_FRAGMENT);
     }
 }
