@@ -2,11 +2,11 @@ package concept.com.labtech.ui;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 
 import concept.com.labtech.R;
+import concept.com.labtech.interfaces.DrawerClickListener;
 
-public class MainActivity extends ABaseActivity implements ActionBarController.DrawerClickListener {
+public class MainActivity extends ABaseActivity implements DrawerClickListener {
 
     private ActionBarController actionBarController;
 
@@ -25,6 +25,7 @@ public class MainActivity extends ABaseActivity implements ActionBarController.D
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         actionBarController.onPostCreate();
+        actionBarController.openDrawer();
     }
 
     @Override
@@ -48,7 +49,7 @@ public class MainActivity extends ABaseActivity implements ActionBarController.D
 
     @Override
     public void drawerListClick(int position) {
-        //todo
+        //TODO
     }
 
     public void setWindowTitle(String title) {

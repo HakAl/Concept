@@ -7,7 +7,24 @@
     <color name="accent_dark">#de3232</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
-    <color name="white">#FFFFFF</color>
-    <color name="icons">#FFFFFF</color>
+    <color name="white">#FFF</color>
     <color name="divider">#B6B6B6</color>
+    <color name="fog">#aafafafa</color>
+    <color name="dim_fog">#cceaeaea</color>
+    <color name="grey_fog">#aab3b3b3</color>
+    <color name="grey">#8c8c8c</color>
+    <color name="transparent_grey">#8c8c8c</color>
+    <color name="dark_grey">#424242</color>
+    <color name="steel">#aacdcddd</color>
+    <color name="off_white">#eaeaea</color>
+    <color name="black">#000</color>
+    <color name="orange">#ffffdc7e</color>
+    <color name="green">#ff8dd304</color>
+    <color name="neon_green">#0f0</color>
+    <color name="light_green">#76ff03</color>
+    <color name="blue">#0091ea</color>
+    <color name="pressed_blue">#0277bd</color>
+    <color name="yellow">#fffffbae</color>
+    <color name="red">#fff10800</color>
+    <color name="list_item_pressed">#1A000000</color>
 </resources>

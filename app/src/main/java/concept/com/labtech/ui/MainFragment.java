@@ -1,4 +1,4 @@
-package concept.com.labtech.fragments;
+package concept.com.labtech.ui;
 
 import javax.inject.Inject;
 import concept.com.labtech.R;

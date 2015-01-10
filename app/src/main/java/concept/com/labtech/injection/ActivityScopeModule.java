@@ -7,7 +7,7 @@ import javax.inject.Singleton;
 import android.app.Activity;
 import android.content.Context;
 import concept.com.labtech.ui.ABaseActivity;
-import concept.com.labtech.fragments.MainFragment;
+import concept.com.labtech.ui.MainFragment;
 
 /**
  * Provides Activity lifecycle dependencies.

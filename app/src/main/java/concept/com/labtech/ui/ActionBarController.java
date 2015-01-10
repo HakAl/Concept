@@ -1,6 +1,7 @@
 package concept.com.labtech.ui;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import concept.com.labtech.R;
+import concept.com.labtech.interfaces.DrawerClickListener;
 
 /**
  * Created by alex on 1/8/15.
@@ -30,23 +32,19 @@ public class ActionBarController implements AdapterView.OnItemClickListener
     public ActionBarController(MainActivity context)
     {
         this.context = context;
-        toolbar = (Toolbar) context.findViewById(R.id.toolbar);
-        actionBar = LayoutInflater.from(context).inflate(R.layout.actionbar, toolbar, false);
-        drawer = (DrawerLayout) context.findViewById(R.id.drawer_layout);
-        actionBarToggle = new ActionBarDrawerToggle(context, drawer, toolbar, R.string.empty, R.string.empty);
+        this.toolbar = (Toolbar) context.findViewById(R.id.toolbar);
         prepareToDisplay(context);
     }
 
     private void prepareToDisplay(MainActivity context)
     {
         context.setSupportActionBar(toolbar);
+        this.actionBar = LayoutInflater.from(context).inflate(R.layout.actionbar, toolbar, false);
         toolbar.addView(actionBar);
+        this.drawer = (DrawerLayout) context.findViewById(R.id.drawer_layout);
+        this.drawer.setScrimColor(Color.parseColor("#11111111"));
+        this.actionBarToggle = new ActionBarDrawerToggle(context, drawer, toolbar, R.string.empty, R.string.empty);
         actionBarToggle.syncState();
-        initDrawerView();
-    }
-
-    private void initDrawerView()
-    {
         final ListView mDrawerList = (ListView) context.findViewById(R.id.list_drawer);
         String[] titles = context.getResources().getStringArray(R.array.drawer_list);
         mDrawerList.setAdapter(new ArrayAdapter<>(context, R.layout.drawer_item, titles));
@@ -100,11 +98,6 @@ public class ActionBarController implements AdapterView.OnItemClickListener
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
         drawer.closeDrawers();
-        context.drawerListClick(position);
-    }
-
-    public interface DrawerClickListener
-    {
-        public void drawerListClick(int position);
+        ((DrawerClickListener) context).drawerListClick(position);
     }
 }
