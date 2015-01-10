@@ -2,10 +2,11 @@
 <resources>
 
     <string-array name="drawer_list">
-        <item>Demographics</item>
-        <item>Sino-pulmonary symptoms</item>
-        <item>Situs Abnormalities</item>
-        <item>Fertility Problems</item>
+        <item>Profile</item>
+        <item>Find Patient...</item>
+        <item>Common Diagnoses</item>
+        <item>Patient Demographics</item>
+        <item>Settings</item>
     </string-array>
 
 </resources>

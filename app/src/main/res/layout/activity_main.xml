@@ -19,7 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="32dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/fab_selector"/>
+        android:background="@drawable/fab_btn"/>
 
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"

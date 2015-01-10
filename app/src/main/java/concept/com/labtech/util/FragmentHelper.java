@@ -5,7 +5,9 @@ import android.app.FragmentManager;
 
 public class FragmentHelper
 {
+    public static final String DIALOG_FRAGMENT = "DialogFragment";
     public static final String MAIN_FRAGMENT = "MainFragment";
+    public static final String PATIENT_FRAGMENT = "PatientFragment";
 
     public static void addFragment(FragmentManager fm, Fragment fragment, String tag)
     {
@@ -31,7 +33,7 @@ public class FragmentHelper
     {
         try {
             fm.beginTransaction()
-                    .replace(android.R.id.content, fragment, tag)
+                    .replace(containerResId, fragment, tag)
                     .addToBackStack(null)
                     .commit();
         } catch (Exception e) { }

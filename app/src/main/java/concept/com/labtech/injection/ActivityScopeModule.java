@@ -1,6 +1,7 @@
 package concept.com.labtech.injection;
 
 import concept.com.labtech.ui.MainActivity;
+import concept.com.labtech.ui.PatientEntryFragment;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
@@ -20,7 +21,8 @@ import concept.com.labtech.ui.MainFragment;
             addsTo = ApplicationScopeModule.class,
             injects = {
                     MainActivity.class,
-                    MainFragment.class })
+                    MainFragment.class,
+                    PatientEntryFragment.class})
 
 public class ActivityScopeModule {
 

@@ -1,15 +1,23 @@
 package concept.com.labtech.ui;
 
+import android.app.AlertDialog;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import concept.com.labtech.R;
 import concept.com.labtech.ui.callbacks.DrawerClickListener;
 import concept.com.labtech.util.FragmentHelper;
+
+import static android.content.DialogInterface.BUTTON_NEGATIVE;
+import static android.content.DialogInterface.BUTTON_POSITIVE;
 import static concept.com.labtech.util.FragmentHelper.MAIN_FRAGMENT;
 
-public class MainActivity extends ABaseActivity implements DrawerClickListener {
+public class MainActivity extends ABaseActivity implements DrawerClickListener, View.OnClickListener, DialogHelper.DialogCallback {
 
+    //TODO remove
+    private boolean isNewPatient = false;
     private ActionBarController actionBarController;
 
     @Override
@@ -19,6 +27,7 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener {
 
         setContentView(R.layout.activity_main);
         this.actionBarController = new ActionBarController(this);
+        this.findViewById(R.id.fab).setOnClickListener(this);
 
         if (savedInstanceState == null) {
             FragmentHelper.addFragment(
@@ -34,7 +43,6 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener {
         super.onPostCreate(savedInstanceState);
 
         actionBarController.onPostCreate();
-        actionBarController.openDrawer();
     }
 
     @Override
@@ -55,16 +63,78 @@ public class MainActivity extends ABaseActivity implements DrawerClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        
+
         actionBarController = null;
     }
 
     @Override
     public void drawerListClick(int position) {
-        //TODO
+        Toast.makeText(this, "Unimplemented Functionality", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab: newEntry(); break;
+            default:break;
+        }
+    }
+
+    @Override
+    public void onResult(int which) {
+        switch (which) {
+            case BUTTON_POSITIVE:
+                isNewPatient = true;
+                this.setWindowTitle("New Patient");
+                toggleFabVisiblility();
+                FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.MAIN_FRAGMENT);
+                FragmentHelper.replaceFragment(
+                        getFragmentManager(),
+                        PatientEntryFragment.newInstance(),
+                        R.id.container,
+                        FragmentHelper.PATIENT_FRAGMENT);
+                break;
+            case BUTTON_NEGATIVE:
+                Toast.makeText(this, "negative", Toast.LENGTH_LONG).show();
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (isNewPatient) {
+            FragmentHelper.removeFragment(getFragmentManager(), FragmentHelper.PATIENT_FRAGMENT);
+            FragmentHelper.replaceFragment(
+                    getFragmentManager(),
+                    PatientEntryFragment.newInstance(),
+                    R.id.container,
+                    FragmentHelper.MAIN_FRAGMENT);
+            isNewPatient = false;
+        }
+
+        super.onBackPressed();
     }
 
     public void setWindowTitle(String title) {
         actionBarController.setActionBarTitle(title);
+    }
+
+    public void toggleFabVisiblility()
+    {
+        if (this.findViewById(R.id.fab).getVisibility() == View.VISIBLE) {
+            this.findViewById(R.id.fab).setVisibility(View.INVISIBLE);
+        } else {
+            this.findViewById(R.id.fab).setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void newEntry()
+    {
+//        DialogHelper.modal().show(this, "New Patient?", "OK", "CANCEL");
+        FragmentHelper.addFragment(
+                getFragmentManager(),
+                NewPatientDialog.newInstance(),
+                R.id.container,
+                FragmentHelper.DIALOG_FRAGMENT);
     }
 }

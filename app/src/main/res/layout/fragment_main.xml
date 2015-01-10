@@ -20,8 +20,6 @@
         android:layout_marginRight="48dp"
         android:text="Welcome."
         android:fontFamily="sans-serif-light"
-        android:shadowColor="@color/primary_text"
-        android:shadowRadius="2"
         android:textStyle="italic"
         android:textSize="36sp"
         android:textColor="@color/secondary_text"/>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!--Top Level-->
+    <!--Unique identifier of person being evaluated-->
+    <!--Unique identifier of proband-->
+    <!--Date of Visit-->
+    <!--Person Taking Family History-->
+    <!--Email Address-->
+    <!--Fax-->
+    <!--Date participant signed informed consent-->
+
+
+    <TextView
+        android:id="@+id/entry_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="General Information"
+        android:fontFamily="sans-serif-light"
+        android:shadowColor="@color/primary_text"
+        android:shadowRadius="1"
+        android:textSize="36sp"
+        android:textColor="@color/secondary_text"/>
+
+    <View
+        android:id="@+id/entry_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/accent"
+        android:layout_below="@id/entry_title"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/input_unique_id"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/entry_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Unique ID"/>
+
+    <EditText
+        android:id="@+id/input_unique_prob"
+        android:layout_below="@id/input_unique_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:singleLine="true"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Unique ID (Proband)"/>
+
+    <EditText
+        android:id="@+id/input_date_visit"
+        android:singleLine="true"
+
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/input_unique_prob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Date of Visit"/>
+
+    <EditText
+        android:id="@+id/input_family_history"
+        android:layout_below="@id/input_date_visit"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Person Taking Family History"/>
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:singleLine="true"
+        android:layout_below="@id/input_family_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Email Address"/>
+
+    <EditText
+        android:id="@+id/input_fax"
+        android:singleLine="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Fax"/>
+
+    <EditText
+        android:id="@+id/input_consent_date"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/input_fax"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:hint="Date of Consent"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:background="@drawable/primary_button"/>
+
+</RelativeLayout>

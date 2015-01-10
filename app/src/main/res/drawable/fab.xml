@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- "shadow" -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#22000000" />
+        </shape>
+    </item>
 
-<!-- "shadow" -->
-<item>
-    <shape android:shape="oval" >
-        <solid android:color="#22000000"/>
-    </shape>
-</item>
+    <item android:bottom="3dp">
+        <shape android:shape="oval">
 
-<item android:bottom="3dp">
-    <shape
-        android:shape="oval">
+            <size
+                android:width="56dp"
+                android:height="56dp" />
+            <solid android:color="@color/accent" />
 
-        <size android:width="56dp" android:height="56dp"/>
-        <solid android:color="@color/accent"/>
-
-    </shape>
-</item>
-
+        </shape>
+    </item>
 </layer-list>
