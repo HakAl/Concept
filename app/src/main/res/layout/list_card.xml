@@ -7,12 +7,12 @@
     card_view:cardElevation="3dp"
     card_view:cardUseCompatPadding="true"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:id="@+id/card_card">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
         <TextView
             android:id="@+id/card_header"
@@ -22,27 +22,25 @@
             android:layout_alignParentTop="true"
             android:layout_margin="16dp"
             android:fontFamily="sans-serif-light"
-            android:textStyle="italic"
-            android:textSize="36sp"
+            android:textSize="26sp"
             android:textColor="@color/secondary_text" />
 
         <View
+            android:id="@+id/card_divider"
             android:layout_below="@+id/card_header"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/divider"
-            android:layout_marginBottom="16dp" />
+            android:background="@color/divider"/>
 
         <TextView
             android:id="@+id/card_descript"
+            android:layout_below="@+id/card_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_margin="16dp"
             android:fontFamily="sans-serif-light"
-            android:textStyle="italic"
-            android:textSize="22sp"
+            android:textSize="21sp"
+            android:layout_marginBottom="16dp"
             android:textColor="@color/secondary_text" />
 
     </RelativeLayout>
