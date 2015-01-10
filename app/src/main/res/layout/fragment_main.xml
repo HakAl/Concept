@@ -1,4 +1,4 @@
-<RelativeLayout
+<merge
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,13 +7,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".TabActivity$PlaceholderFragment"
-    android:id="@+id/fragment_tab_container">
+    tools:context=".MainActivity$MainFragment"
+    android:id="@+id/fragment_main">
 
     <TextView
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Welcome."
+        android:textSize="29sp"
+        />
 
     <ImageView
         android:id="@+id/fab"
@@ -24,4 +27,4 @@
         android:padding="24dp"
         android:background="@drawable/fab"/>
 
-</RelativeLayout>
+</merge>
