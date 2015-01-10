@@ -15,7 +15,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="20dp"
         android:text="Welcome"
         android:drawableLeft="@drawable/ic_launcher"
         android:drawablePadding="24dp"
@@ -31,6 +31,7 @@
         android:layout_below="@+id/section_label"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:scrollbars="none"
         android:layout_above="@+id/frame_main_bottom"
         android:dividerHeight="12dp"
         android:divider="@null" />

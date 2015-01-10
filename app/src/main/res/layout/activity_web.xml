@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/off_white">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -21,8 +22,7 @@
         <concept.com.labtech.ui.LoadingRelativeLayout
             android:orientation="vertical" android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/web_activity_container"
-            android:background="@color/off_white"/>
+            android:id="@+id/web_activity_container"/>
 
         <RelativeLayout
             android:layout_below="@+id/toolbar"

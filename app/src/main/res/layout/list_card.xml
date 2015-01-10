@@ -29,6 +29,8 @@
             android:id="@+id/card_divider"
             android:layout_below="@+id/card_header"
             android:layout_width="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
             android:layout_height="2dp"
             android:background="@color/divider"/>
 
